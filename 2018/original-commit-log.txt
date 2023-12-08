@@ -1,0 +1,99 @@
+fceb4cc	Wed Mar 6 23:13:55 2019 -0600	Day 19 (part 1)
+4d54416	Sun Mar 3 17:29:11 2019 -0600	Day 18
+fd35509	Sun Mar 3 01:48:27 2019 -0600	Day 17
+92f0576	Fri Mar 1 20:21:37 2019 -0600	Day 16 (part 2)
+26e1c03	Fri Mar 1 01:51:35 2019 -0600	Day 16 (part 1)
+9cc02c1	Sun Feb 24 17:12:34 2019 -0600	Animate it!
+937506a	Sun Feb 24 16:38:18 2019 -0600	Solved part 2!
+400a171	Sun Feb 24 15:51:24 2019 -0600	Solved part 1!
+5d95d0c	Sun Feb 24 15:48:29 2019 -0600	Combat!
+9f8d5ed	Sun Feb 24 15:18:38 2019 -0600	Rounds
+f6dfc23	Sun Feb 24 15:00:28 2019 -0600	Turn-taking
+cc3b9a6	Sun Feb 24 13:01:47 2019 -0600	Attack step
+5b570e0	Sun Feb 24 00:52:11 2019 -0600	Moving
+c30ca72	Sat Feb 23 23:34:53 2019 -0600	Track and display unit info
+e9370a4	Sat Feb 23 23:10:44 2019 -0600	Refactor to use Position(x, y) tuple
+6b6bbfd	Sat Feb 23 22:31:40 2019 -0600	Dijkstra's algorithm
+5eb7dcd	Sat Jan 12 00:40:08 2019 -0600	Day 15: Parse and display the world
+b065309	Wed Jan 9 22:32:51 2019 -0600	Day 14
+73ff860	Mon Dec 31 00:01:14 2018 -0600	Day 13 (part 2)
+0c5af22	Sun Dec 30 18:34:34 2018 -0600	Day 13 (part 1)
+a0c8618	Sun Dec 30 03:27:15 2018 -0600	Day 12
+2dbd23b	Sat Dec 29 03:51:16 2018 -0600	Day 11
+13fd338	Fri Dec 28 18:07:44 2018 -0600	Day 10
+02c2cfb	Fri Dec 28 05:31:32 2018 -0600	cleanups recommended by clippy
+84ea168	Fri Dec 28 04:39:06 2018 -0600	Pass method as closure :D
+8255970	Fri Dec 28 04:30:37 2018 -0600	Day 9
+678c37b	Fri Dec 28 03:00:48 2018 -0600	Day 8 (Part 2)
+0799877	Fri Dec 28 02:32:19 2018 -0600	Day 8 (Part 1)
+83a1140	Mon Dec 24 03:52:27 2018 -0600	Day 7
+26f4238	Sat Dec 22 23:14:22 2018 -0600	Day 6
+a05d35b	Sat Dec 22 04:48:27 2018 -0600	Day 5
+abc7de0	Sat Dec 22 02:56:15 2018 -0600	Day 4
+79fb958	Fri Dec 21 21:39:34 2018 -0600	Find guard with most minutes asleep
+4c77146	Tue Dec 11 22:22:06 2018 -0600	Regex parser for day 4
+7a91a9e	Sun Dec 9 01:51:31 2018 -0600	Day 3
+4718ffa	Thu Dec 6 21:56:58 2018 -0600	Day 3, part 1, step 1. No more blog :(
+f123c40	Wed Dec 5 23:13:13 2018 -0600	Day 2 (part 2)
+4231cac	Tue Dec 4 23:56:54 2018 -0600	day 2 (part 1)
+327a12f	Mon Dec 3 22:55:05 2018 -0600	blog post for day 1
+82e17ed	Sat Dec 1 20:44:05 2018 -0600	Oh! No need for replace(). insert(x) returns false if x is already present
+7966fd4	Sat Dec 1 18:10:54 2018 -0600	Handle arguments to dispatch to a solution
+33c0ad5	Sat Dec 1 17:55:40 2018 -0600	Move input parsing code and solution-showing code to day01::solve()
+c1f7e2f	Sat Dec 1 17:52:03 2018 -0600	Move day 1 solution to its own module
+dc1b863	Sat Dec 1 17:46:54 2018 -0600	Add rest of tests from puzzle description
+bbcb430	Sat Dec 1 17:28:34 2018 -0600	Pattern match reference in find()
+71f8b6e	Sat Dec 1 17:28:16 2018 -0600	Try removing clone()
+1437865	Sat Dec 1 17:25:43 2018 -0600	Annotate type of HashSet
+3dbef4b	Sat Dec 1 17:24:48 2018 -0600	Try vec![0]
+fb92796	Sat Dec 1 17:21:36 2018 -0600	Try a slice
+a2a6a36	Sat Dec 1 17:20:03 2018 -0600	Use FromIterator
+cc1bab0	Sat Dec 1 17:19:12 2018 -0600	Try from_iter()
+7b3f638	Sat Dec 1 17:18:24 2018 -0600	Try passing 0 to HashSet constructor..
+623c50c	Sat Dec 1 17:15:02 2018 -0600	Have to insert 0 to get the first test to pass
+d0c8be2	Sat Dec 1 17:14:00 2018 -0600	Debug output
+e9a07eb	Sat Dec 1 17:12:41 2018 -0600	Replace take_while().last() with find()
+de8ca6d	Sat Dec 1 17:06:31 2018 -0600	Unwrap result
+ce32863	Sat Dec 1 17:04:06 2018 -0600	Return the last() freq!
+6a68b0e	Sat Dec 1 17:03:09 2018 -0600	Clone the int...
+3713635	Sat Dec 1 17:01:50 2018 -0600	Try using take_while() with seen.replace()
+b8c34b3	Sat Dec 1 16:57:50 2018 -0600	Get stream of frequencies using scan()
+5f3674d	Sat Dec 1 16:45:16 2018 -0600	Replace contains with replace!
+9744d0e	Sat Dec 1 16:44:16 2018 -0600	Replace works
+39564be	Sat Dec 1 16:43:57 2018 -0600	Add remaining two tests
+77fc30b	Sat Dec 1 16:36:05 2018 -0600	Pass freq by reference
+2722f39	Sat Dec 1 16:33:08 2018 -0600	Use set to solve part 2
+926e6b5	Sat Dec 1 16:21:26 2018 -0600	Keep running total of frequency changes
+5286973	Sat Dec 1 16:20:35 2018 -0600	Use cycle()
+e62270a	Sat Dec 1 16:15:39 2018 -0600	Return 0 for now
+f18b246	Sat Dec 1 16:15:13 2018 -0600	Oops
+d9a206b	Sat Dec 1 16:14:24 2018 -0600	Try looping through the numbers and printing them out
+29c3a91	Sat Dec 1 16:11:05 2018 -0600	Add failing test
+03816d5	Sat Dec 1 16:08:57 2018 -0600	Pass slice of array instead of array itself
+2bf43a7	Sat Dec 1 16:07:21 2018 -0600	Import function into tests module
+16b0afe	Sat Dec 1 16:04:18 2018 -0600	Try adding a test
+a4d88c2	Sat Dec 1 15:55:31 2018 -0600	Add function for part 2
+ba5594f	Sat Dec 1 15:53:21 2018 -0600	Use & operator to pass slice
+e4850fc	Sat Dec 1 15:52:48 2018 -0600	Try to pass a slice instead of the Vec
+6e101d4	Sat Dec 1 15:51:30 2018 -0600	Move code specific to part 1 into its own function
+3dfe265	Sat Dec 1 15:38:11 2018 -0600	Add type annotation to sum
+cffee90	Sat Dec 1 15:37:48 2018 -0600	Call sum() on iterator, not the Vec itself
+af53704	Sat Dec 1 15:34:04 2018 -0600	Try sum()
+48aaa87	Sat Dec 1 15:31:09 2018 -0600	Remove unnecessary type annotation
+d0e455a	Sat Dec 1 15:30:10 2018 -0600	Unwrap the line
+06f8ebf	Sat Dec 1 15:27:56 2018 -0600	Try out map()
+986ea4a	Sat Dec 1 14:45:01 2018 -0600	Annotate the return type we want from parse()
+fabfa0c	Sat Dec 1 14:44:06 2018 -0600	Refactor to use single counter variable
+e0d74cd	Sat Dec 1 00:54:00 2018 -0600	Total up the frequency changes and print the result
+3ed0ce2	Sat Dec 1 00:50:02 2018 -0600	Oops, unwrap the result!
+d9f5bc0	Sat Dec 1 00:49:06 2018 -0600	Try parsing the string
+5cd559b	Sat Dec 1 00:33:02 2018 -0600	Need type annotation
+6298507	Sat Dec 1 00:32:42 2018 -0600	Try getting args
+e8af130	Sat Dec 1 00:22:52 2018 -0600	See what happens when file doesn't exist
+9eb9bfa	Sat Dec 1 00:21:11 2018 -0600	Question mark
+6f9eb53	Sat Dec 1 00:18:49 2018 -0600	Add return type
+a08c5e1	Sat Dec 1 00:14:38 2018 -0600	Try returning Ok(())
+52ec978	Sat Dec 1 00:10:21 2018 -0600	Import io::prelude::*
+2601ee7	Sat Dec 1 00:08:44 2018 -0600	Imports
+a6f2df4	Sat Dec 1 00:04:15 2018 -0600	Read line by line
+b50eb05	Fri Nov 30 23:32:59 2018 -0600	Generate project with cargo

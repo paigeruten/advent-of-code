@@ -1,0 +1,32 @@
+6a367a2	Mon Nov 20 00:15:02 2023 -0600	Refactoring fun
+7be650d	Sat Nov 18 02:26:12 2023 -0600	Day 22 part 2
+bca60c6	Tue Dec 27 18:28:54 2022 -0600	Day 21 (part 2)
+4153512	Tue Dec 27 18:00:28 2022 -0600	Day 17 (part 2)
+4a739a0	Tue Dec 27 17:25:05 2022 -0600	Day 24 (part 2)
+f6607cb	Tue Dec 27 04:34:54 2022 -0600	Day 24 (part 1)
+adfcd2e	Tue Dec 27 02:51:55 2022 -0600	Day 19 (part 2)
+7423e00	Tue Dec 27 01:40:36 2022 -0600	Day 25
+ac90c46	Fri Dec 23 12:14:49 2022 -0600	Day 23
+3b84eef	Fri Dec 23 00:24:09 2022 -0600	Day 22 (part 1)
+057f943	Thu Dec 22 16:16:33 2022 -0600	Day 21 (part 1)
+9cef6e2	Tue Dec 20 23:03:41 2022 -0600	Day 20
+bb790c2	Mon Dec 19 01:33:21 2022 -0600	Day 19 (part 1)
+e498ce4	Sun Dec 18 12:46:42 2022 -0600	Convert love2d to Ruby in preparation for solving part 2
+b86de89	Sun Dec 18 12:46:10 2022 -0600	Day 18
+99126f2	Sat Dec 17 18:46:05 2022 -0600	Day 17 (part 1)
+896860e	Fri Dec 16 17:40:38 2022 -0600	Day 16
+54e8d11	Thu Dec 15 22:02:22 2022 -0600	Day 15
+9bd1c00	Wed Dec 14 01:39:43 2022 -0600	Day 14
+02ddc5b	Tue Dec 13 01:02:53 2022 -0600	Day 13
+f7f47b7	Mon Dec 12 01:36:56 2022 -0600	Day 12
+8a2e9d3	Sun Dec 11 00:24:14 2022 -0600	Day 11
+4c84e75	Fri Dec 9 23:47:02 2022 -0600	Day 10
+a616297	Fri Dec 9 00:49:07 2022 -0600	Day 9
+703d7d1	Wed Dec 7 23:14:40 2022 -0600	Day 8
+a66be08	Wed Dec 7 00:33:37 2022 -0600	Day 7
+c08740c	Tue Dec 6 02:27:07 2022 -0600	Day 6
+1df6cef	Mon Dec 5 01:42:59 2022 -0600	Day 5
+8fd250a	Sat Dec 3 23:49:20 2022 -0600	Day 4
+1c111a0	Sat Dec 3 02:11:01 2022 -0600	Day 3
+12af280	Fri Dec 2 01:09:06 2022 -0600	Day 2
+7fb3d37	Thu Dec 1 00:45:36 2022 -0600	Day 1

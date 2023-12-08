@@ -1,0 +1,17 @@
+9e1cd62	Sat Dec 28 18:39:01 2019 -0600	Day 15 w/ visualization!
+eac53f3	Sat Dec 28 05:26:23 2019 -0600	Day 15 playable
+9a1ea55	Fri Dec 27 21:48:43 2019 -0600	Day 14
+99d27f6	Fri Dec 27 17:02:45 2019 -0600	Day 13 playable in browser with WASM :D
+e101058	Fri Dec 27 02:40:45 2019 -0600	Day 13
+2204a53	Thu Dec 26 22:10:06 2019 -0600	Day 12
+e3ac555	Thu Dec 26 20:30:16 2019 -0600	Day 11
+d94f2e2	Thu Dec 26 03:10:01 2019 -0600	Day 10
+92e92d1	Wed Dec 25 20:10:16 2019 -0600	Day 9
+01b3ce0	Wed Dec 25 14:59:21 2019 -0600	Day 8
+6f31aa4	Mon Dec 23 03:48:15 2019 -0600	Day 7
+d252eb1	Sun Dec 22 21:58:28 2019 -0600	Day 6
+0d3367d	Sun Dec 22 03:22:47 2019 -0600	Day 5
+9fca8b3	Wed Dec 11 22:38:48 2019 -0600	Day 4
+26add7d	Sun Dec 8 01:41:52 2019 -0600	Day 3
+2cc4631	Tue Dec 3 20:57:45 2019 -0600	Day 2
+d1abcc8	Sun Dec 1 16:36:01 2019 -0600	Day 1

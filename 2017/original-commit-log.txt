@@ -1,0 +1,31 @@
+587ef06	Mon Dec 25 03:59:14 2017 -0600	Day 25 (Ruby)
+5f84e74	Sun Dec 24 03:05:49 2017 -0600	Day 24 (Ruby)
+f828603	Sat Dec 23 03:01:36 2017 -0600	Day 23 (Ruby)
+bf917eb	Fri Dec 22 16:22:48 2017 -0600	Day 22 (Ruby)
+22eed05	Thu Dec 21 00:53:03 2017 -0600	Day 21 (Ruby)
+8b94490	Wed Dec 20 19:24:13 2017 -0600	Day 20 (Ruby)
+57fe3c9	Mon Dec 18 23:30:57 2017 -0600	Day 19 (Ruby)
+2f03d58	Sun Dec 17 23:26:00 2017 -0600	Day 18 (Ruby)
+e72bd77	Sat Dec 16 23:33:27 2017 -0600	Day 16 (Ruby)
+a66f346	Sat Dec 16 23:14:50 2017 -0600	Day 17 (Ruby)
+b189e5e	Thu Dec 14 23:16:43 2017 -0600	Day 15 (Ruby)
+459e289	Thu Dec 14 18:54:38 2017 -0600	Day 14 (Ruby)
+b46cb8d	Tue Dec 12 23:11:05 2017 -0600	Day 13 (Ruby)
+648c1d6	Mon Dec 11 23:10:03 2017 -0600	Day 12 (Ruby)
+3e11053	Sun Dec 10 23:20:53 2017 -0600	Day 11 (Ruby)
+6825308	Sun Dec 10 00:53:52 2017 -0600	Day 10 (C)
+bc37146	Sat Dec 9 23:27:40 2017 -0600	Day 10 (Ruby)
+c9d4769	Fri Dec 8 23:49:38 2017 -0600	Day 9 (Ruby w/ regexes)
+3438b28	Fri Dec 8 23:26:21 2017 -0600	Day 9 (C)
+ba2ccb3	Fri Dec 8 23:08:43 2017 -0600	Day 9 (Ruby)
+0f5ae14	Fri Dec 8 02:46:54 2017 -0600	Day 8 (C)
+9b55729	Thu Dec 7 23:29:26 2017 -0600	Day 8 (Ruby)
+b547e12	Thu Dec 7 05:27:43 2017 -0600	Day 7 (C)
+1293973	Thu Dec 7 00:49:33 2017 -0600	Day 7 (Ruby)
+d3e6470	Wed Dec 6 00:37:35 2017 -0600	Day 6
+b55d5e7	Tue Dec 5 00:12:39 2017 -0600	Day 5
+fa60d70	Mon Dec 4 01:10:24 2017 -0600	Day 4
+f907626	Sun Dec 3 00:49:39 2017 -0600	Day 3
+b4b919a	Sat Dec 2 00:34:12 2017 -0600	Day 2
+56ebd01	Fri Dec 1 00:23:43 2017 -0600	Day 1
+462641f	Thu Nov 30 22:07:14 2017 -0600	Laitini Timmoc
