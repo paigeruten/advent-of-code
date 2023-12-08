@@ -1,0 +1,8 @@
+run:
+    @ruby advent.rb all
+
+test:
+    @TEST=1 ruby advent.rb
+
+watch:
+    @TEST=1 rerun -x ruby advent.rb

@@ -1,0 +1,81 @@
+Position = Struct.new(:x, :y)
+
+class Sensor
+  attr_reader :pos, :beacon_pos
+
+  def initialize(pos, beacon_pos)
+    @pos, @beacon_pos = pos, beacon_pos
+  end
+
+  def dist_to_beacon
+    (@beacon_pos.x - @pos.x).abs + (@beacon_pos.y - @pos.y).abs
+  end
+
+  def range_covered_at_row(row_y)
+    half_width = dist_to_beacon - (row_y - pos.y).abs
+    (pos.x - half_width)..(pos.x + half_width)
+  end
+end
+
+class RangeSet
+  def initialize(ranges = [])
+    @ranges = []
+    ranges.each { |r| insert(r) }
+  end
+
+  def insert(new_range)
+    idx = 0
+    while idx < @ranges.length do
+      cur_range = @ranges[idx]
+      if cur_range.begin >= new_range.begin && cur_range.end <= new_range.end
+        @ranges.delete_at(idx)
+      elsif new_range.begin >= cur_range.begin && new_range.end <= cur_range.end
+        return
+      elsif new_range.include?(cur_range.begin)
+        new_range = (new_range.begin..cur_range.end)
+        @ranges.delete_at(idx)
+      elsif new_range.include?(cur_range.end)
+        new_range = (cur_range.begin..new_range.end)
+        @ranges.delete_at(idx)
+      else
+        idx += 1
+      end
+    end
+    @ranges.push(new_range)
+  end
+
+  def size
+    @ranges.map(&:size).sum
+  end
+
+  def include?(value)
+    @ranges.any? { |r| r.include?(value) }
+  end
+
+  # Assumes there's at least two ranges with a gap between them (so hopefully the
+  # gap isn't at x=0 or x=4_000_000!)
+  def gap
+    ranges = @ranges.sort_by(&:begin)
+    if ranges.length > 1 && !ranges[1].include?(ranges[0].end + 1)
+      ranges[0].end + 1
+    end
+  end
+end
+
+sensors = []
+File.readlines("input").each do |line|
+  if line =~ /^Sensor at x=(-?\d+), y=(-?\d+): closest beacon is at x=(-?\d+), y=(-?\d+)$/
+    sensors.push(Sensor.new(Position.new($1.to_i, $2.to_i), Position.new($3.to_i, $4.to_i)))
+  else
+    raise "Invalid line '#{line.chomp}'"
+  end
+end
+
+0.upto(4_000_000).each do |row_y|
+  range_set = RangeSet.new(sensors.map { |s| s.range_covered_at_row(row_y) })
+  gap_x = range_set.gap
+  if gap_x
+    p gap_x * 4_000_000 + row_y
+    break
+  end
+end

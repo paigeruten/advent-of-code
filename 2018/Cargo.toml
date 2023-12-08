@@ -1,0 +1,10 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+authors = ["Pailey Quilts <paileyq@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+chrono = "0.4"
+lazy_static = "1.2.0"
+regex = "1"
