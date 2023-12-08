@@ -73,4 +73,4 @@ star_cups = [one_cup.next_cup, one_cup.next_cup.next_cup]
 p star_cups.map(&:label).inject(:*)
 
 __END__
-469217538
+476138259

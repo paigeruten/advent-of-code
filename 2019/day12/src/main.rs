@@ -112,10 +112,10 @@ fn calculate_energy(moons: &[Moon]) -> i64 {
 
 fn main() {
     let initial_moons = init_moons(&[
-        (5, 4, 4),
-        (-11, -11, -3),
-        (0, 7, 0),
-        (-13, 2, 10),
+        (17, -12, 13),
+        (2, 1, 1),
+        (-1, -17, 7),
+        (12, -14, 18),
     ]);
 
     // Part 1
