@@ -11,6 +11,7 @@ require "day06/wait_for_it"
 require "day07/camel_cards"
 require "day08/haunted_wasteland"
 require "day09/mirage_maintenance"
+require "day10/pipe_maze"
 
 exit if test?
 
@@ -24,6 +25,7 @@ PUZZLES = {
   7 => CamelCardsPuzzle,
   8 => HauntedWastelandPuzzle,
   9 => MirageMaintenancePuzzle,
+  10 => PipeMazePuzzle,
 }
 
 if ARGV.empty?
