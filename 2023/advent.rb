@@ -12,6 +12,7 @@ require "day07/camel_cards"
 require "day08/haunted_wasteland"
 require "day09/mirage_maintenance"
 require "day10/pipe_maze"
+require "day11/cosmic_expansion"
 
 exit if test?
 
@@ -26,6 +27,7 @@ PUZZLES = {
   8 => HauntedWastelandPuzzle,
   9 => MirageMaintenancePuzzle,
   10 => PipeMazePuzzle,
+  11 => CosmicExpansionPuzzle,
 }
 
 if ARGV.empty?
