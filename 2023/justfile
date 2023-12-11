@@ -1,5 +1,5 @@
-run:
-    @ruby advent.rb all
+solve puzzle="all":
+    @ruby advent.rb {{puzzle}}
 
 test:
     @TEST=1 ruby advent.rb
