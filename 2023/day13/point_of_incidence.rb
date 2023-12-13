@@ -2,14 +2,20 @@ require_relative "../common"
 
 module PointOfIncidence
   class Pattern
-    attr_reader :tiles
+    attr_reader :tiles, :has_smudge
 
-    def initialize(tiles)
+    def initialize(tiles, has_smudge = false)
       @tiles = tiles
+      @has_smudge = has_smudge
     end
 
     def self.from_string(input)
       new(input.lines.map(&:chomp).map(&:chars))
+    end
+
+    def with_smudge
+      @has_smudge = true
+      self
     end
 
     def line_of_reflection
@@ -17,16 +23,12 @@ module PointOfIncidence
     end
 
     def horizontal_line_of_reflection
-      matching_pairs = @tiles
-        .each_cons(2)
-        .with_index
-        .filter_map { |pair, idx| idx if pair[0] == pair[1] }
-
-      matching_pairs.each do |idx|
+      0.upto(height - 2).each do |idx|
         reflected_height = [idx + 1, height - idx - 1].min
-        lines_above = @tiles[(idx - reflected_height + 1)..idx]
-        lines_below = @tiles[(idx + 1)..(idx + reflected_height)]
-        return LineOfReflection.horizontal(idx + 1) if lines_above == lines_below.reverse
+        rows_above = @tiles[(idx - reflected_height + 1)..idx]
+        rows_below = @tiles[(idx + 1)..(idx + reflected_height)]
+        row_pairs = rows_above.zip(rows_below.reverse)
+        return LineOfReflection.horizontal(idx + 1) if row_pairs_equal?(row_pairs)
       end
       nil
     end
@@ -36,12 +38,18 @@ module PointOfIncidence
       position ? LineOfReflection.vertical(position) : nil
     end
 
+    def row_pairs_equal?(row_pairs)
+      total_chars = row_pairs.sum { |row1, _| row1.length }
+      matching_chars = row_pairs.sum { |row1, row2| row1.zip(row2).count { |a, b| a == b } }
+      matching_chars == (has_smudge ? total_chars - 1 : total_chars)
+    end
+
     def height
       @tiles.length
     end
 
     def transpose
-      Pattern.new(@tiles.transpose)
+      Pattern.new(@tiles.transpose, @has_smudge)
     end
   end
 
@@ -86,6 +94,10 @@ class PointOfIncidencePuzzle < Puzzle
     patterns.map(&:line_of_reflection).sum(&:summary)
   end
 
+  def solve_part_two
+    patterns.map(&:with_smudge).map(&:line_of_reflection).sum(&:summary)
+  end
+
   def self.parse(input)
     patterns = input.split("\n\n").map { Pattern.from_string(_1) }
     new(patterns)
@@ -125,13 +137,11 @@ if test?
     end
 
     def test_example_input_part_two
-      skip
-      assert_equal ??, PointOfIncidencePuzzle.parse(EXAMPLE_INPUT).solve_part_two
+      assert_equal 400, PointOfIncidencePuzzle.parse(EXAMPLE_INPUT).solve_part_two
     end
 
     def test_actual_input_part_two
-      skip
-      assert_equal ??, PointOfIncidencePuzzle.parse(ACTUAL_INPUT).solve_part_two
+      assert_equal 28475, PointOfIncidencePuzzle.parse(ACTUAL_INPUT).solve_part_two
     end
   end
 
