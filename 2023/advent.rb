@@ -14,6 +14,7 @@ require "day09/mirage_maintenance"
 require "day10/pipe_maze"
 require "day11/cosmic_expansion"
 require "day12/hot_springs"
+require "day13/point_of_incidence"
 
 exit if test?
 
@@ -30,6 +31,7 @@ PUZZLES = {
   10 => PipeMazePuzzle,
   11 => CosmicExpansionPuzzle,
   12 => HotSpringsPuzzle,
+  13 => PointOfIncidencePuzzle,
 }
 
 if ARGV.empty?
