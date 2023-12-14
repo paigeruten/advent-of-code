@@ -28,6 +28,10 @@ def profile(&block)
   [result, ending - starting]
 end
 
-def ms(seconds)
-  "%.2fms" % (seconds * 1000)
+def format_time(seconds)
+  if seconds >= 1
+    "%.2f seconds" % seconds
+  else
+    "%.2fms" % (seconds * 1000)
+  end
 end

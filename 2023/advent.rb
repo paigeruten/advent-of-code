@@ -15,6 +15,7 @@ require "day10/pipe_maze"
 require "day11/cosmic_expansion"
 require "day12/hot_springs"
 require "day13/point_of_incidence"
+require "day14/parabolic_reflector_dish"
 
 exit if test?
 
@@ -32,6 +33,7 @@ PUZZLES = {
   11 => CosmicExpansionPuzzle,
   12 => HotSpringsPuzzle,
   13 => PointOfIncidencePuzzle,
+  14 => ParabolicReflectorDishPuzzle,
 }
 
 if ARGV.empty?
@@ -60,10 +62,10 @@ puzzles.each do |day, puzzle_class|
     1 => profile { puzzle.solve_part_one },
     2 => profile { puzzle.solve_part_two },
   }.each do |part, (solution, timing)|
-    puts "  Part #{part}: \x1b[1;32m#{solution}\x1b[m (\x1b[33m#{ms(timing)}\x1b[m)"
+    puts "  Part #{part}: \x1b[1;32m#{solution}\x1b[m (\x1b[33m#{format_time(timing)}\x1b[m)"
     total_time += timing
   end
   puts
 end
 
-puts "Total time: \x1b[33m#{ms(total_time)}\x1b[m"
+puts "Total time: \x1b[33m#{format_time(total_time)}\x1b[m"
