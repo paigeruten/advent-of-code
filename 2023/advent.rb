@@ -16,6 +16,7 @@ require "day11/cosmic_expansion"
 require "day12/hot_springs"
 require "day13/point_of_incidence"
 require "day14/parabolic_reflector_dish"
+require "day15/lens_library"
 
 exit if test?
 
@@ -34,6 +35,7 @@ PUZZLES = {
   12 => HotSpringsPuzzle,
   13 => PointOfIncidencePuzzle,
   14 => ParabolicReflectorDishPuzzle,
+  15 => LensLibraryPuzzle,
 }
 
 if ARGV.empty?
