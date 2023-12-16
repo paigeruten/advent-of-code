@@ -63,9 +63,10 @@ puzzles.each do |day, puzzle_class|
   puzzle = puzzle_class.parse(input)
   puts "\x1b[1mDay #{day} (#{puzzle_class.to_s.sub /Puzzle$/, ''})\x1b[m"
   {
-    1 => profile { puzzle.solve_part_one },
-    2 => profile { puzzle.solve_part_two },
-  }.each do |part, (solution, timing)|
+    1 => lambda { puzzle.solve_part_one },
+    2 => lambda { puzzle.solve_part_two },
+  }.each do |part, solve|
+    solution, timing = profile(&solve)
     puts "  Part #{part}: \x1b[1;32m#{solution}\x1b[m (\x1b[33m#{format_time(timing)}\x1b[m)"
     total_time += timing
   end

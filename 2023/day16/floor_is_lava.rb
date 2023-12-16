@@ -4,7 +4,6 @@ module FloorIsLava
   class Contraption
     def initialize(tiles)
       @tiles = tiles
-      @beam_history = {}
     end
 
     def [](position)
@@ -17,42 +16,6 @@ module FloorIsLava
 
     def height
       @tiles.length
-    end
-
-    def cast_beam_aux(beam, been = Set.new)
-      #return Set[Loop.new(beam)] if been.include?(beam)
-      return been if been.include?(beam)
-
-      tile = self[beam.position]
-      return Set[] if not tile
-
-      been |= [beam]
-      @beam_history[beam] ||= Array(tile.redirect_beam(beam)).map { cast_beam_aux(_1, been) }.inject(:|) | Set[beam.position]
-    end
-
-    def cast_beam(beam)
-      cast_beam_aux(beam).length
-      #resolve_beam_history_loops!
-      #@beam_history[beam].length
-    end
-
-    def resolve_beam_history_loops!
-      loop do
-        looop = nil
-        @beam_history.keys.each do |beam|
-          looop = @beam_history[beam].find { _1.is_a? Loop }
-          break if looop
-        end
-        break if looop.nil?
-
-        beams_in_loop = @beam_history.keys.select { |beam| @beam_history[beam].include?(looop) }
-        beams_in_loop_set = beams_in_loop.map(&:position).to_set
-        pp beams_in_loop.length
-        beams_in_loop.each do |beam|
-          @beam_history[beam].delete(looop)
-          @beam_history[beam] |= beams_in_loop_set
-        end
-      end
     end
 
     def simulate(initial_beam)
@@ -80,8 +43,7 @@ module FloorIsLava
     end
 
     def simulate_all
-      #all_possible_starting_beams.map { |beam| simulate(beam) }.max
-      all_possible_starting_beams.map { |beam| cast_beam(beam) }.max
+      all_possible_starting_beams.map { |beam| simulate(beam) }.max
     end
 
     def all_possible_starting_beams
@@ -89,19 +51,6 @@ module FloorIsLava
       (0...width).map  { |x| Beam.new(Position.new(x, height - 1), Direction.up)    } +
       (0...height).map { |y| Beam.new(Position.new(0, y),          Direction.right) } +
       (0...height).map { |y| Beam.new(Position.new(width - 1, y),  Direction.left)  }
-    end
-
-    def ppp(beams)
-      s = @tiles.map.with_index do |row, y|
-        row.map.with_index do |tile, x|
-          if beams.any? { |beam| beam.position.x == x && beam.position.y == y }
-            "#"
-          else
-            tile.to_s
-          end
-        end.join
-      end.join("\n") + "\n\n"
-      puts s
     end
   end
 
@@ -112,10 +61,6 @@ module FloorIsLava
     def redirect_beam(beam)
       beam.move_forward
     end
-
-    def to_s
-      "."
-    end
   end
 
   class Splitter < Tile
@@ -123,10 +68,6 @@ module FloorIsLava
 
     def initialize(orientation)
       @orientation = orientation
-    end
-
-    def to_s
-      orientation.to_s
     end
 
     def redirect_beam(beam)
@@ -158,10 +99,6 @@ module FloorIsLava
 
     def initialize(orientation)
       @orientation = orientation
-    end
-
-    def to_s
-      orientation.to_s
     end
 
     def redirect_beam(beam)
@@ -209,22 +146,6 @@ module FloorIsLava
 
     def hash
       [position, direction].hash
-    end
-  end
-
-  class Loop
-    attr_reader :beam
-
-    def initialize(beam)
-      @beam = beam
-    end
-
-    def eql?(other)
-      self.class == other.class && beam.eql?(other.beam)
-    end
-
-    def hash
-      beam.hash
     end
   end
 
@@ -294,9 +215,7 @@ class FloorIsLavaPuzzle < Puzzle
 
   def solve_part_one
     initial_beam = Beam.new(Position.new(0, 0), Direction.right)
-    #contraption.simulate(initial_beam)
-
-    contraption.cast_beam(initial_beam)
+    contraption.simulate(initial_beam)
   end
 
   def solve_part_two
@@ -355,7 +274,7 @@ if test?
     end
 
     def test_actual_input_part_two
-      skip
+      skip('Too slow!')
       assert_equal 7793, FloorIsLavaPuzzle.parse(ACTUAL_INPUT).solve_part_two
     end
   end
