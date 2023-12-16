@@ -17,6 +17,7 @@ require "day12/hot_springs"
 require "day13/point_of_incidence"
 require "day14/parabolic_reflector_dish"
 require "day15/lens_library"
+require "day16/floor_is_lava"
 
 exit if test?
 
@@ -36,6 +37,7 @@ PUZZLES = {
   13 => PointOfIncidencePuzzle,
   14 => ParabolicReflectorDishPuzzle,
   15 => LensLibraryPuzzle,
+  16 => FloorIsLavaPuzzle,
 }
 
 if ARGV.empty?
