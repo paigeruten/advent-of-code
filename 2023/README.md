@@ -4,7 +4,7 @@ These are my solutions to [Advent of Code](https://adventofcode.com/) for 2023. 
 
 ## Setup
 
-Probably requires Ruby >=3.2. I sometimes use [`paco`](https://github.com/ruby-next/paco) for parsing, which can be installed with [Bundler](https://bundler.io/):
+Probably requires Ruby >=3.2. I sometimes use [`paco`](https://github.com/ruby-next/paco) for parsing, and [`pairing_heap`](https://github.com/mhib/pairing_heap) for Dijkstra's algorithm, which can both be installed with [Bundler](https://bundler.io/):
 
     $ bundle
 

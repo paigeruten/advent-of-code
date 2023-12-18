@@ -3,6 +3,7 @@ GEM
   specs:
     minitest (5.20.0)
     paco (0.2.3)
+    pairing_heap (3.0.1)
 
 PLATFORMS
   arm64-darwin-22
@@ -10,6 +11,7 @@ PLATFORMS
 DEPENDENCIES
   minitest
   paco
+  pairing_heap
 
 BUNDLED WITH
    2.4.22
