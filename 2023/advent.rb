@@ -19,6 +19,7 @@ require "day14/parabolic_reflector_dish"
 require "day15/lens_library"
 require "day16/floor_is_lava"
 require "day17/clumsy_crucible"
+require "day18/lavaduct_lagoon"
 
 exit if test?
 
@@ -40,6 +41,7 @@ PUZZLES = {
   15 => LensLibraryPuzzle,
   16 => FloorIsLavaPuzzle,
   17 => ClumsyCruciblePuzzle,
+  18 => LavaductLagoonPuzzle,
 }
 
 if ARGV.empty?
