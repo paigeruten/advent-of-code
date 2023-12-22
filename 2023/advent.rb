@@ -23,6 +23,7 @@ require "day18/lavaduct_lagoon"
 require "day19/aplenty"
 require "day20/pulse_propagation"
 require "day21/step_counter"
+require "day22/sand_slabs"
 
 exit if test?
 
@@ -48,6 +49,7 @@ PUZZLES = {
   19 => AplentyPuzzle,
   20 => PulsePropagationPuzzle,
   21 => StepCounterPuzzle,
+  22 => SandSlabsPuzzle,
 }
 
 if ARGV.empty?
