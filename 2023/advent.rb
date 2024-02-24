@@ -25,6 +25,7 @@ require "day20/pulse_propagation"
 require "day21/step_counter"
 require "day22/sand_slabs"
 require "day23/long_walk"
+require "day24/never_tell_me_the_odds"
 
 exit if test?
 
@@ -52,6 +53,7 @@ PUZZLES = {
   21 => StepCounterPuzzle,
   22 => SandSlabsPuzzle,
   23 => LongWalkPuzzle,
+  24 => NeverTellMeTheOddsPuzzle,
 }
 
 if ARGV.empty?
