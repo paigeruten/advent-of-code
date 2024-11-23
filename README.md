@@ -1,11 +1,11 @@
 # Advent of Code
 
-This repo contains all of my [Advent of Code](https://adventofcode.com/) solutions. My goal is to get 500 stars in 2024! 
+This repo contains all of my [Advent of Code](https://adventofcode.com/) solutions.
 
 ## Current status
 
 ```
-[2023] 16*
+[2023] 44*
 [2022] 50*
 [2021] 41*
 [2020] 50*
@@ -15,5 +15,5 @@ This repo contains all of my [Advent of Code](https://adventofcode.com/) solutio
 [2016] 50*
 [2015] 27*
 
-Total stars: 342*
+Total stars: 370*
 ```
