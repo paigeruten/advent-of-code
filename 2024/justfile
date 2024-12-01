@@ -1,0 +1,2 @@
+gen day_num:
+    ruby codegen/gen_day.rb {{day_num}}
