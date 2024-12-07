@@ -1,4 +1,8 @@
-use std::{collections::HashSet, fmt::Display, io::BufRead};
+use std::{
+    collections::{HashMap, HashSet},
+    fmt::Display,
+    io::BufRead,
+};
 
 use crate::common::{Part, Solution};
 
@@ -26,8 +30,8 @@ pub fn solve(part: Part, input: impl BufRead) -> color_eyre::Result<Solution> {
                     }
 
                     let mut cur_world = initial_world.clone();
-                    cur_world.obstructions.insert(new_obstruction);
-                    cur_world.simulate() == SimulationResult::LoopDetected
+                    cur_world.add_obstruction(new_obstruction);
+                    cur_world.fast_simulate() == SimulationResult::LoopDetected
                 })
                 .count()
         }
@@ -41,10 +45,43 @@ struct World {
     width: i64,
     height: i64,
     obstructions: HashSet<Position>,
+    obstructions_by_x: HashMap<i64, Vec<Position>>,
+    obstructions_by_y: HashMap<i64, Vec<Position>>,
     guard: Guard,
 }
 
 impl World {
+    pub fn new(width: i64, height: i64, obstructions: HashSet<Position>, guard: Guard) -> Self {
+        let mut obstructions_by_x: HashMap<i64, Vec<Position>> = HashMap::new();
+        let mut obstructions_by_y: HashMap<i64, Vec<Position>> = HashMap::new();
+        for &obstruction in obstructions.iter() {
+            obstructions_by_x
+                .entry(obstruction.x)
+                .or_default()
+                .push(obstruction);
+            obstructions_by_y
+                .entry(obstruction.y)
+                .or_default()
+                .push(obstruction);
+        }
+
+        for positions in obstructions_by_x.values_mut() {
+            positions.sort_by_key(|pos| pos.y);
+        }
+        for positions in obstructions_by_y.values_mut() {
+            positions.sort_by_key(|pos| pos.x);
+        }
+
+        Self {
+            width,
+            height,
+            obstructions,
+            obstructions_by_x,
+            obstructions_by_y,
+            guard,
+        }
+    }
+
     pub fn parse(input: impl BufRead) -> color_eyre::Result<Self> {
         let mut width = 0;
         let mut height = 0;
@@ -72,17 +109,32 @@ impl World {
             height += 1;
         }
 
-        Ok(World {
-            width,
-            height,
-            obstructions,
-            guard,
-        })
+        Ok(World::new(width, height, obstructions, guard))
+    }
+
+    pub fn add_obstruction(&mut self, obstruction: Position) {
+        self.obstructions.insert(obstruction);
+
+        let by_x = self.obstructions_by_x.entry(obstruction.x).or_default();
+        by_x.push(obstruction);
+        by_x.sort_by_key(|pos| pos.y);
+
+        let by_y = self.obstructions_by_y.entry(obstruction.y).or_default();
+        by_y.push(obstruction);
+        by_y.sort_by_key(|pos| pos.x);
     }
 
     pub fn simulate(&mut self) -> SimulationResult {
         loop {
             if let Some(result) = self.step() {
+                return result;
+            }
+        }
+    }
+
+    pub fn fast_simulate(&mut self) -> SimulationResult {
+        loop {
+            if let Some(result) = self.leap() {
                 return result;
             }
         }
@@ -110,6 +162,73 @@ impl World {
         }
 
         None
+    }
+
+    fn leap(&mut self) -> Option<SimulationResult> {
+        self.guard
+            .been
+            .insert((self.guard.position, self.guard.facing));
+
+        if let Some(obstruction) = self.find_next_obstruction() {
+            self.guard.position = obstruction.step_forward(self.guard.facing.opposite());
+            self.guard.facing = self.guard.facing.turn_right();
+
+            if self
+                .guard
+                .been
+                .contains(&(self.guard.position, self.guard.facing))
+            {
+                Some(SimulationResult::LoopDetected)
+            } else {
+                None
+            }
+        } else {
+            Some(SimulationResult::OutOfBounds)
+        }
+    }
+
+    fn find_next_obstruction(&self) -> Option<Position> {
+        match self.guard.facing {
+            Direction::North => {
+                self.obstructions_by_x
+                    .get(&self.guard.position.x)
+                    .and_then(|obstructions| {
+                        obstructions
+                            .iter()
+                            .rev()
+                            .find(|obstruction| obstruction.y < self.guard.position.y)
+                    })
+            }
+            Direction::South => {
+                self.obstructions_by_x
+                    .get(&self.guard.position.x)
+                    .and_then(|obstructions| {
+                        obstructions
+                            .iter()
+                            .find(|obstruction| obstruction.y > self.guard.position.y)
+                    })
+            }
+            Direction::West => {
+                self.obstructions_by_y
+                    .get(&self.guard.position.y)
+                    .and_then(|obstructions| {
+                        obstructions
+                            .iter()
+                            .rev()
+                            .find(|obstruction| obstruction.x < self.guard.position.x)
+                    })
+            }
+            Direction::East => {
+                self.obstructions_by_y
+                    .get(&self.guard.position.y)
+                    .and_then(|obstructions| {
+                        obstructions
+                            .iter()
+                            .find(|obstruction| obstruction.x > self.guard.position.x)
+                    })
+            }
+        }
+        .copied()
     }
 }
 
@@ -190,6 +309,15 @@ impl Direction {
             Self::West => Self::North,
         }
     }
+
+    pub fn opposite(self) -> Self {
+        match self {
+            Self::North => Self::South,
+            Self::East => Self::West,
+            Self::South => Self::North,
+            Self::West => Self::East,
+        }
+    }
 }
 
 impl Display for Direction {
@@ -259,7 +387,6 @@ mod tests {
     }
 
     #[test]
-    #[ignore = "too slow"]
     fn solve_part_two() {
         let input = file_reader("input/day06").unwrap();
         assert_eq!(Solution::Num(1972), solve(Part::Two, input).unwrap());
