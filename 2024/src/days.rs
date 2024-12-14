@@ -14,8 +14,9 @@ mod day09;
 mod day10;
 mod day11;
 mod day12;
+mod day13;
 
-pub const NUM_DAYS: usize = 12;
+pub const NUM_DAYS: usize = 13;
 
 pub fn solve(day_number: usize, part: Part, input: impl BufRead) -> color_eyre::Result<Solution> {
     match day_number {
@@ -31,6 +32,7 @@ pub fn solve(day_number: usize, part: Part, input: impl BufRead) -> color_eyre::
         10 => day10::solve(part, input),
         11 => day11::solve(part, input),
         12 => day12::solve(part, input),
+        13 => day13::solve(part, input),
         _ => Err(color_eyre::eyre::eyre!("That day has not been solved yet.")),
     }
 }
