@@ -43,12 +43,14 @@ impl TryFrom<usize> for Part {
 #[derive(Debug, PartialEq)]
 pub enum Solution {
     Num(i64),
+    Str(String),
 }
 
 impl Display for Solution {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Solution::Num(n) => n.fmt(f),
+            Solution::Str(s) => s.fmt(f),
         }
     }
 }
