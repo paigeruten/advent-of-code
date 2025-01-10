@@ -5,6 +5,7 @@ This repo contains all of my [Advent of Code](https://adventofcode.com/) solutio
 ## Current status
 
 ```
+[2024] 50*
 [2023] 44*
 [2022] 50*
 [2021] 41*
@@ -15,5 +16,5 @@ This repo contains all of my [Advent of Code](https://adventofcode.com/) solutio
 [2016] 50*
 [2015] 27*
 
-Total stars: 370*
+Total stars: 420*
 ```
